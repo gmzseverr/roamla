@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Google Places autocomplete dropdown stili */
+
+.pac-container {
+  background-color: #f9fafb !important; /* Açık gri ton */
+  border-radius: 0.75rem !important; /* 12px */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important; /* Daha yumuşak gölge */
+  font-family: "Inter", sans-serif !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  z-index: 1100 !important;
+  border: 1px solid #e5e7eb !important; /* İnce açık sınır */
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+.pac-item {
+  padding: 0.75rem 1.25rem !important; /* 12px 20px */
+  cursor: pointer !important;
+  font-size: 1rem !important;
+  color: #374151 !important; /* Koyu gri */
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out !important;
+}
+
+.pac-item:hover,
+.pac-item.pac-selected {
+  background-color: #2563eb !important; /* Tailwind mavi-600 */
+  color: white !important;
+}
+
+.pac-item .pac-icon {
+  width: 20px !important;
+  height: 20px !important;
+  filter: invert(30%) sepia(70%) saturate(500%) hue-rotate(190deg)
+    brightness(90%) contrast(85%) !important; /* Renk uyumu */
+}
+
+.pac-item .pac-item-query {
+  font-weight: 700 !important;
+  color: inherit !important; /* Hover sırasında beyaz kalması için */
+}
+
+.pac-item:focus {
+  outline: none !important;
+  background-color: #2563eb !important;
+  color: white !important;
+}
