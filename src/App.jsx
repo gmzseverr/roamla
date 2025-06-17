@@ -6,13 +6,20 @@ import Hero from "./Hero";
 import Plan from "./Plan";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [showPlanPage, setShowPlanPage] = useState(false);
+
+  const handleStartPlanning = () => {
+    setShowPlanPage(true);
+  };
 
   return (
     <>
       <Header />
-      <Hero />
-      <Plan />
+      {!showPlanPage ? (
+        <Hero onStartPlanning={handleStartPlanning} />
+      ) : (
+        <Plan />
+      )}
     </>
   );
 }
